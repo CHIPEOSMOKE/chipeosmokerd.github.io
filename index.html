@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD DE CHIPEO SMOKE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --neon-red: #ff073a;
+            --neon-purple: #bc13fe;
+            --dark-bg: #0a0a0f;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--neon-red), var(--neon-purple));
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, white, transparent);
+            animation: headerGlow 3s infinite;
+        }
+
+        nav {
+            background: rgba(20, 20, 30, 0.95);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--neon-purple);
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .game-card {
+            background: rgba(15, 15, 25, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 0, 100, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .neon-title {
+            background: linear-gradient(45deg, var(--neon-red), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: rgba(30, 30, 40, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--neon-purple);
+        }
+
+        .play-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--neon-red), var(--neon-purple));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .play-button:hover::before {
+            left: 100%;
+        }
+
+        footer {
+            background: rgba(10, 10, 15, 0.95);
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes headerGlow {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                gap: 1rem;
+            }
+            
+            .game-card {
+                padding: 1rem;
+            }
+            
+            .neon-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>RD DE CHIPEO SMOKE 🔥🎶</h1>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="index2.html"><i class="fas fa-project-diagram"></i> Proyectos</a>
+            <a href="index3.html"><i class="fas fa-store"></i> Tienda</a>
+            <a href="index4.html"><i class="fas fa-envelope"></i> Contacto</a>
+        </div>
+    </nav>
+    
+    <main class="content">
+        <article class="game-card">
+            <h2 class="neon-title">¿Qué es RD DE CHIPEO SMOKE?</h2>
+            <p>Sumérgete en el mundo definitivo de la cultura del chipeo dominicano. Demuestra tus habilidades musicales, personaliza tus vehículos y compite en eventos épicos.</p>
+        </article>
+
+        <article class="game-card">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-car"></i> Vehículos Épicos</h3>
+                    <p>Personaliza autos con sistemas de sonido potentes y efectos visuales únicos</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-trophy"></i> Competencias</h3>
+                    <p>Participa en eventos semanales y gana premios exclusivos</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-music"></i> Sistema de Sonido</h3>
+                    <p>Configura tus bajos y compite por el mejor sistema de audio</p>
+                </div>
+            </div>
+
+            <center>
+                <a href="https://www.roblox.com/es/games/126989454440029/RD-de-Chipeo-Smoke" target="_blank" class="play-button">
+                    <i class="fas fa-gamepad"></i> Jugar Ahora
+                </a>
+            </center>
+        </article>
+
+        <article class="game-card">
+            <h2 class="neon-title">Características Principales</h2>
+            <ul class="features-grid">
+                <li class="feature-card">
+                    <h3><i class="fas fa-microchip"></i> Sistema de Memoria</h3>
+                    <p>Guarda tu progreso y personalizaciones avanzadas</p>
+                </li>
+                <li class="feature-card">
+                    <h3><i class="fas fa-map-marked-alt"></i> Mapa Dinámico</h3>
+                    <p>Explora diferentes zonas de chipeo con desafíos únicos</p>
+                </li>
+                <li class="feature-card">
+                    <h3><i class="fas fa-users"></i> Comunidad Activa</h3>
+                    <p>Únete a grupos y participa en eventos comunitarios</p>
+                </li>
+            </ul>
+        </article>
+    </main>
+
+    <footer>
+        <p style="text-align: center; opacity: 0.8;">
+            © 2025 RD DE CHIPEO SMOKE - La auténtica experiencia del chipeo caribeño 🔊<br>
+            <small>Síguenos en redes sociales: 
+                <i class="fab fa-twitter"></i> 
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-discord"></i>
+            </small>
+        </p>
+    </footer>
+</body>
+</html>
